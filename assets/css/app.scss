@@ -1,0 +1,110 @@
+/* This file is for your main application css. */
+@import "./phoenix.css";
+
+/* Alerts and form errors */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.alert-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.alert p {
+  margin-bottom: 0;
+}
+.alert:empty {
+  display: none;
+}
+.invalid-feedback {
+  color: #a94442;
+  display: block;
+  margin: -1rem 0 2rem;
+}
+
+ /* unvisited link */
+ a:link {
+  color: rgb(209, 178, 77);
+}
+
+/* visited link */
+a:visited {
+  color: rgb(158, 152, 93);
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(255, 219, 140);
+}
+
+/* selected link */
+a:active {
+  color: rgb(255, 196, 0);
+} 
+
+//from : https://fdossena.com/?p=html5cool/buttons/i.frag
+a.button1{
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid #8b7b5c;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#494846;
+  text-align:center;
+  transition: all 0.2s;
+}
+a.button1:hover{
+  color:#000000;
+  background-color:#beb191;
+}
+@media all and (max-width:30em){
+  a.button1{
+    display:block;
+    margin:0.4em auto;
+  }
+} 
+
+.titles {
+  text-align: center;
+  color:rgb(138, 133, 91)
+}
+
+//tables
+th, td {
+  border-bottom: 2px solid rgb(93, 81, 56);
+}
+tr:hover {background-color: #cebb87b9;} 
+
+.trunc {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 150px;
+  white-space: nowrap;
+}
+img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-bottom: 10px;
+}

@@ -1,0 +1,48 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :title %>
+  <%= text_input f, :title %>
+  <%= error_tag f, :title %>
+
+  <strong>Description</strong>
+  <%= textarea f, :body %>
+  <%= error_tag f, :body %>
+
+  <%= label f, :distance %>
+  <%= number_input f, :distance, step: "any" %>
+  <%= error_tag f, :distance %>
+
+  <%= label f, :time %>
+  <%= time_select f, :time, second: []%>
+  <%= error_tag f, :time %>
+
+  <%= label f, :elevation %>
+  <%= number_input f, :elevation %>
+  <%= error_tag f, :elevation %>
+
+  <strong>Effort (1-5)</strong>
+  <%= number_input f, :effort %>
+  <%= error_tag f, :effort %>
+
+  <%= label f, :date %>
+  <%= date_input f, :date %>
+  <%= error_tag f, :date %><br>
+
+  <strong>Average Heart Rate</strong>
+  <%= number_input f, :avg_hr %>
+  <%= error_tag f, :avg_hr %>    
+
+  <strong>Max Heart Rate</strong>    
+  <%= number_input f, :max_hr %>    
+  <%= error_tag f, :max_hr %>
+
+
+  <div class="button1">
+    <%= submit "Save"%>
+  </div>
+<% end %>

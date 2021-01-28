@@ -1,0 +1,63 @@
+<section class="phx-hero">
+  <h1>Orienteering Hub</h1>
+  <p>Welcome to the best orienteering blog!</p>
+</section>
+
+<p>Here you'll find an overview of what orienteering is, and also how my trainings are going!</p>
+
+<h2 class="titles">What's orienteering?</h2>
+<p>
+  So much talk about orienteering but what is orienteering?<br>
+  Glad you didn't ask! Orienteering is a sport!<br> 
+  No it's not one of those treasure hunting activities...Although when you execute a leg just perfectly you'll
+  get the feeling you won the jackpot.<br>
+  I'm getting ahead of myself. You don't even what a leg is... And no, it's not a body part...<br>
+  An orienteering race is just running a course. However, unlike most running sports you are not given direct cues of where to go. 
+  And here comes the use of a map. You are given a map containing the checkpoints you have to reach in order to finish the race. <br>
+  I doesn't matter where you go, just that you punch all the checkpoints in the right order (given on the map). <br>
+  I've told you what a checkpoint is and what you need to finish a race in orienteering. But the beauty of orienteering lays on the legs.
+  A leg is the connection between checkpoints. Usually the person who makes the smartest decision to navigate the leg wins the split. 
+  Now the minds comes into play. If you were already tired trying to climb that huge mountain, now you have to think,
+  otherwise you'll get lost in the middle of nowhere. Believe me it's not a good feeling. Specially at night...
+</p>
+
+<h2 class="titles">Here's a map</h2>
+<img class="center" src= "<%=Routes.static_path(@conn, "/images/MapImage.png")%>" alt="Example orienteering map">
+<p>As you can see, it's quite a mess. But once you become familiar with it you can become a pro. Or more likely you'll be average...<br>
+  In the center of the purple circles lay the checkpoints. A leg can be viewed as the purple line between checkpoints.<br>
+  The correct aproach to the map is to go from the start, i.e triangle, to the checkpoint 1, then 2, 3... You get the gist.
+  The winner is whom finishes first.<br>
+  This is just an extract of a real map. But you can have a feel for a complex orienteering map.<br>
+  If this is too much to take in, don't worry it's only normal. But fear not what makes orienteering a great sport is the community 
+  that backs it up. From Portugal to Norway everyone will greet you with open arms. <br>
+  And don't let me get started on the views and landscapes you get to see...
+</p>
+
+<p>And now I'll leave you with my training logs. On the table bellow you'll find my latest trainings. <br>
+  You can also have a peek at the full library of trainings.
+</p>
+
+<h1 class="titles">Last trainings</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Title</th>
+      <th>Distance</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for log <- someLogs() do %>
+    <tr>
+      <td><%= log.date %></td>
+      <td><%= log.title %></td>
+      <td><%= log.distance %></td>
+      <td><%= log.time %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+
+<%= link("Complete Log", to: Routes.log_path(@conn, :all), class: "button1")%>

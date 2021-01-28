@@ -1,0 +1,50 @@
+<h1>Show Log</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @log.title %>
+  </li>
+
+  <li>
+    <strong>Date:</strong>
+    <%= @log.date %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @log.body %>
+  </li>
+
+  <li>
+    <strong>Distance:</strong>
+    <%= @log.distance %>
+  </li>
+
+  <li>
+    <strong>Time:</strong>
+    <%= @log.time %>
+  </li>
+
+  <li>
+    <strong>Elevation:</strong>
+    <%= @log.elevation %>
+  </li>
+
+  <li>
+    <strong>Effort:</strong>
+    <%= @log.effort %>
+  </li>
+
+  <li>
+    <strong>Pace:</strong>
+    <% {min, sec} = min_km(@log.time, @log.distance) %>
+      <%= min %> :
+      <%= sec %> min/km
+  </li>
+
+
+</ul>
+
+<span><%= link "Back", to: NavigationHistory.last_path(@conn, 1) %></span>
