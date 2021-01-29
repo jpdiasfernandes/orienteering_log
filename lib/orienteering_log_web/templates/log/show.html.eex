@@ -1,9 +1,10 @@
-<h1 class="titles">Showing: <%= @log.title %> </h1>
+<h1 class="titles">Showing: <%= @log.title %>
+</h1>
 
 <table>
 
   <tr>
-    <td>    
+    <td>
       <strong>Title:</strong>
       <%= @log.title %>
     </td>
@@ -18,7 +19,7 @@
   </tr>
 
   <tr>
-    <td>    
+    <td>
       <strong>Description:</strong>
       <%= @log.body %>
     </td>
@@ -40,9 +41,9 @@
   </tr>
 
   <tr>
-    <td>   
-    <strong>Elevation:</strong>
-    <%= @log.elevation %>m
+    <td>
+      <strong>Elevation:</strong>
+      <%= @log.elevation %>m
     </td>
 
   </tr>
@@ -50,16 +51,16 @@
   <tr>
     <td>
       <strong>Effort:</strong>
-      <%= @log.effort %> (1-5) 
+      <%= @log.effort %> (1-5)
     </td>
   </tr>
 
   <tr>
     <td>
-    <strong>Pace:</strong>
-    <% {min, sec} = min_km(@log.time, @log.distance) %>
-      <%= min %> :
-      <%= sec %> min/km
+      <strong>Pace:</strong>
+      <% {min, sec}=min_km(@log.time, @log.distance) %>
+        <%= min %> :
+          <%= sec %> min/km
     </td>
   </tr>
 
@@ -80,4 +81,6 @@
 
 </table>
 
-<span><%= link "Back", to: NavigationHistory.last_path(@conn, 1) %></span>
+<span>
+  <%= link "Back" , to: NavigationHistory.last_path(@conn, 1) %>
+</span>
