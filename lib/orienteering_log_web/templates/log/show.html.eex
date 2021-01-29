@@ -1,4 +1,4 @@
-<h1>Show Log</h1>
+<h1 class="titles">Showing: <%= @log.title %> </h1>
 
 <table>
 
@@ -42,7 +42,7 @@
   <tr>
     <td>   
     <strong>Elevation:</strong>
-    <%= @log.elevation %>
+    <%= @log.elevation %>m
     </td>
 
   </tr>
@@ -50,7 +50,7 @@
   <tr>
     <td>
       <strong>Effort:</strong>
-      <%= @log.effort %>
+      <%= @log.effort %> (1-5) 
     </td>
   </tr>
 
@@ -60,6 +60,20 @@
     <% {min, sec} = min_km(@log.time, @log.distance) %>
       <%= min %> :
       <%= sec %> min/km
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <strong>Average Heart Rate:</strong>
+      <%= @log.avg_hr %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <strong>Max Heart Rate:</strong>
+      <%= @log.max_hr %>
     </td>
   </tr>
 

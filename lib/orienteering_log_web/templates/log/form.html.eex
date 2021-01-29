@@ -25,8 +25,8 @@
   <%= number_input f, :elevation %>
   <%= error_tag f, :elevation %>
 
-  <strong>Effort (1-5)</strong>
-  <%= number_input f, :effort %>
+  <strong>Effort</strong><br>
+  <%= select f, :effort, 1..5 %>
   <%= error_tag f, :effort %>
 
   <%= label f, :date %>
