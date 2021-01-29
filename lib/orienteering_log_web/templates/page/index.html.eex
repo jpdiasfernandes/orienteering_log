@@ -26,7 +26,7 @@
 </p>
 
 <h2 class="titles">Here's a map</h2>
-<img class="center" src="<%=Routes.static_path(@conn, " /images/MapImage.png")%>" alt="Example orienteering map">
+<img class="center" src="<%=Routes.static_path(@conn, "/images/MapImage.png")%>" alt="Example orienteering map">
 <p>As you can see, it's quite a mess. But once you become familiar with it you can become a pro. Or more likely you'll
   be average...<br>
   In the center of the purple circles lay the checkpoints. A leg can be viewed as the purple line between
