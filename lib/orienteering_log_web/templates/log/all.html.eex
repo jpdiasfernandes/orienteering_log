@@ -31,3 +31,5 @@
 <% end %>
   </tbody>
 </table>
+<strong>Last 7 days:</strong>
+<%= km_last_days(-7) %>

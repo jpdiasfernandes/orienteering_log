@@ -1,5 +1,6 @@
 defmodule OrienteeringLogWeb.LogView do
   use OrienteeringLogWeb, :view
+  alias OrienteeringLogWeb.LogController
 
   #Recieves the time data and gives the minutes/km pace.
   def min_km(time, distance) do
@@ -11,4 +12,10 @@ defmodule OrienteeringLogWeb.LogView do
     {floor(min_k), floor(secs_k)}
 
   end
+
+  def km_last_days(interval) do
+    LogController.km_interval(Date.utc_today(), interval)
+  end
+
+
 end

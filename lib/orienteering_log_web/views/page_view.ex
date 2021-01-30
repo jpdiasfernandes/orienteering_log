@@ -1,10 +1,8 @@
 defmodule OrienteeringLogWeb.PageView do
   use OrienteeringLogWeb, :view
-  alias OrienteeringLog.Logs
+  alias OrienteeringLogWeb.LogController
 
-  def someLogs() do
-    list = Logs.list_logs()
-    list = Enum.sort_by(list, &(&1.date), Date)
-    Enum.take(list, 5)
+  def last_logs(interval) do
+    LogController.logs_from_interval(interval)
   end
 end

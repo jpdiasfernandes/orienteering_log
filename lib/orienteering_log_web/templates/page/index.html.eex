@@ -56,7 +56,7 @@
     </tr>
   </thead>
   <tbody>
-    <%= for log <- someLogs() do %>
+    <%= for log <- last_logs(7) do %>
       <tr>
         <td>
           <%= log.date %>
