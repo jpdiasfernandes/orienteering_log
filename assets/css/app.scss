@@ -56,7 +56,7 @@ a:active {
 } 
 
 //from : https://fdossena.com/?p=html5cool/buttons/i.frag
-a.button1{
+.button1{
   display:inline-block;
   padding:0.35em 1.2em;
   border:0.1em solid #8b7b5c;
@@ -69,13 +69,14 @@ a.button1{
   color:#494846;
   text-align:center;
   transition: all 0.2s;
+  background-color: rgb(236, 227, 207);
 }
-a.button1:hover{
+.button1:hover{
   color:#000000;
   background-color:#beb191;
 }
 @media all and (max-width:30em){
-  a.button1{
+  .button1{
     display:block;
     margin:0.4em auto;
   }

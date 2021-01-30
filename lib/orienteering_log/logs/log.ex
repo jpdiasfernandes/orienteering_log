@@ -1,6 +1,7 @@
 defmodule OrienteeringLog.Logs.Log do
   use Ecto.Schema
   import Ecto.Changeset
+  import Ecto.Query, only: [from: 2]
 
   schema "logs" do
     field :body, :string, default: "-"
@@ -21,5 +22,13 @@ defmodule OrienteeringLog.Logs.Log do
     log
     |> cast(attrs, [:title, :body, :distance, :time, :elevation, :effort, :date, :avg_hr, :max_hr])
     |> validate_required([:title,:distance, :time, :date])
+  end
+
+  def search(query, search_term) do
+    wildcard_search = "%#{search_term}%"
+
+    from log in query,
+    where: ilike(log.title, ^wildcard_search),
+    or_where: ilike(log.body, ^wildcard_search)
   end
 end

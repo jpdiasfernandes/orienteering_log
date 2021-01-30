@@ -1,5 +1,11 @@
 <h1 class="titles">Listing Logs</h1>
 
+<%= form_for @conn, Routes.log_path(@conn, :all), [method: :get] , fn f -> %>
+  <%= search_input f, :query %>
+  <div style="text-align: center;"><%= submit [class: "button1"], do:  "Search" %></div>
+<%end%>
+
+ 
 <table>
   <thead>
     <tr>
@@ -14,7 +20,7 @@
     </tr>
   </thead>
   <tbody>
-<%= for log <- call_logs_inverse() do %>
+<%= for log <- call_logs_inverse(@logs) do %>
     <tr>
       <td><%= log.title %></td>
       <td><%= log.date %></td>

@@ -17,7 +17,15 @@ defmodule OrienteeringLog.Logs do
       [%Log{}, ...]
 
   """
-  def list_logs do
+
+  def list_logs(params) do
+    search_term = get_in(params, ["query"])
+    Log
+    |> Log.search(search_term)
+    |> Repo.all()
+  end
+
+  def list_logs() do
     Repo.all(Log)
   end
 

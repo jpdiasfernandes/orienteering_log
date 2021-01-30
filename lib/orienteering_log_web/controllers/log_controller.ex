@@ -61,34 +61,14 @@ defmodule OrienteeringLogWeb.LogController do
     |> redirect(to: Routes.log_path(conn, :index))
   end
 
-  def all(conn, _params) do
-    logs = Logs.list_logs()
+  def all(conn, params) do
+    logs = Logs.list_logs(params)
     render(conn, "all.html", logs: logs)
   end
 
-  def km_interval(from, interval) do
-    cmp = Date.add(from, interval)
+  def get_list_logs() do
     Logs.list_logs()
-    |> Enum.filter(fn x -> Date.diff(x.date, cmp) > 0 end)
-    |> Enum.map(&(&1.distance))
-    |> Enum.sum()
-
   end
 
-  def logs_from_interval(interval) do
-    list = Logs.list_logs()
-    len = Enum.count(list)
-
-    if (interval > len) do interval = len end
-
-    Enum.sort_by(list, &(&1.date), Date)
-    |>Enum.take(-interval)
-  end
-
-  def sort_inverse_date() do
-    Logs.list_logs()
-    |> Enum.sort_by(&(&1.date), Date)
-    |> Enum.reverse()
-  end
 
 end
