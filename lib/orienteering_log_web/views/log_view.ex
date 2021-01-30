@@ -13,9 +13,9 @@ defmodule OrienteeringLogWeb.LogView do
 
   end
 
-  def km_last_days(interval) do
-    LogController.km_interval(Date.utc_today(), interval)
-  end
 
+  def call_logs_inverse() do
+    LogController.sort_inverse_date()
+  end
 
 end

@@ -85,4 +85,10 @@ defmodule OrienteeringLogWeb.LogController do
     |>Enum.take(-interval)
   end
 
+  def sort_inverse_date() do
+    Logs.list_logs()
+    |> Enum.sort_by(&(&1.date), Date)
+    |> Enum.reverse()
+  end
+
 end
