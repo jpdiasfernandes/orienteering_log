@@ -4,13 +4,6 @@
   <%= search_input f, :query %>
   <div style="text-align: center;"><%= submit [class: "button1"], do:  "Search" %></div>
 <%end%>
-
-<%= form_for @conn, Routes.log_path(@conn, :all), [method: :get] , fn f -> %>
-  <%= dat_input f, :query %>
-  <div style="text-align: center;"><%= submit [class: "button1"], do:  "Search" %></div>
-<%end%>
-
-
  
 <table>
   <thead>

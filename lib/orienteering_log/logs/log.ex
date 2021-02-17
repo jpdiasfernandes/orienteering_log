@@ -30,7 +30,6 @@ defmodule OrienteeringLog.Logs.Log do
 
     from log in query,
     where: ilike(log.title, ^wildcard_search),
-    or_where: ilike(log.body, ^wildcard_search),
-    or_where: log.date == ^search_term
+    or_where: ilike(log.body, ^wildcard_search)
   end
 end

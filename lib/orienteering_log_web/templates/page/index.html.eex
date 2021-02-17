@@ -75,7 +75,12 @@
   </tbody>
 </table>
 
-<strong>Last 7 days:</strong> <%= km_interval(-7) %> km <br><br>
+<h2 class="titles">Latest stats</h2>
+<ul>
+  <li><strong>Last 7 days: </strong><%= km_interval(-7) %> km</li>
+  <li><strong>Last 30 days: </strong><%= km_interval(-30) %> km</li>
+  <li><strong>Last year: </strong><%= km_interval(-365) %> km</li>
+</ul>
 
 
-<%= link("Complete Log", to: Routes.log_path(@conn, :all), class: "button1" )%>
+<div style="text-align: center;"><%= link("Complete Log", to: Routes.log_path(@conn, :all), class: "button1" )%></div>
