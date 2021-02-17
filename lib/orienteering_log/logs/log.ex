@@ -24,11 +24,13 @@ defmodule OrienteeringLog.Logs.Log do
     |> validate_required([:title,:distance, :time, :date])
   end
 
+  @spec search(any, any) :: Ecto.Query.t()
   def search(query, search_term) do
     wildcard_search = "%#{search_term}%"
 
     from log in query,
     where: ilike(log.title, ^wildcard_search),
-    or_where: ilike(log.body, ^wildcard_search)
+    or_where: ilike(log.body, ^wildcard_search),
+    or_where: log.date == ^search_term
   end
 end

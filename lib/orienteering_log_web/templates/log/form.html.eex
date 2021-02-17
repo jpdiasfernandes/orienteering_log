@@ -42,7 +42,5 @@
   <%= error_tag f, :max_hr %>
 
 
-  <div class="button1">
-    <%= submit "Save"%>
-  </div>
+  <%= submit [class: "button1"], do:  "Save" %>
 <% end %>
